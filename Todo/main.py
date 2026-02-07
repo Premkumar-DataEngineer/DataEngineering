@@ -1,8 +1,8 @@
+from fastapi import FastAPI
+import models
+from database import engine
 
+app = FastAPI()
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#the below statement would create the database and tables
+models.Base.metadata.create_all(bind=engine)
