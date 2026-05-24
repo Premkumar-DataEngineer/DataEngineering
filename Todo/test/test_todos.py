@@ -1,6 +1,6 @@
 
-from ..router.auth import get_current_user
-from ..router.todo import get_db
+from ..routers.auth import get_current_user
+from ..routers.todo import get_db
 from fastapi import status
 from .utils import *
 

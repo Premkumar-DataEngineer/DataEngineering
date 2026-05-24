@@ -1,6 +1,8 @@
 #the purpose of this file to create DB model
 #the purpose of the import is we are going to create the models for teh  database.py file
-from .database import Base
+import sys
+sys.path.append("/Users/navyadev/Documents/GitHub/DataEngineering/Todo")
+from database import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, Column, Boolean
 
 class User(Base):

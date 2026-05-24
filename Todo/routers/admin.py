@@ -5,7 +5,9 @@ from sqlalchemy.orm import Session
 from fastapi import  Depends, HTTPException, Path, APIRouter
 from starlette import status
 from .todo import get_db
-from ..models import Todo, User
+import sys
+sys.path.append("/Users/navyadev/Documents/GitHub/DataEngineering/Todo")
+from models import Todo, User
 from .auth import get_current_user
 
 

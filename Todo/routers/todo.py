@@ -4,10 +4,11 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 from fastapi import  Depends, HTTPException, Path, APIRouter
 from starlette import status
-
-from ..models import Base
-from ..database import engine, SessionLocal
-from ..models import Todo
+import sys
+sys.path.append("/Users/navyadev/Documents/GitHub/DataEngineering/Todo")
+from models import Base
+from database import engine, SessionLocal
+from models import Todo
 from .auth import get_current_user
 
 

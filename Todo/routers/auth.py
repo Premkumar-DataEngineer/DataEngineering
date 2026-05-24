@@ -1,13 +1,13 @@
 from datetime import timedelta, datetime, timezone
 from typing import Annotated
-from urllib.request import Request
-
+import sys
+sys.path.append("/Users/navyadev/Documents/GitHub/DataEngineering/Todo")
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from starlette import status
-from ..database import SessionLocal
-from ..models import User
+from database import SessionLocal
+from models import User
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
