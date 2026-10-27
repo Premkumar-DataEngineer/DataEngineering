@@ -1,0 +1,22 @@
+[project]
+name = "langchain-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Premkumar-DataEngineer", email = "premkumarap941@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "ipython>=9.17.1",
+    "langchain-core>=1.7.0",
+    "langchain-openai>=1.7.2",
+]
+
+[project.scripts]
+langchain-lab = "langchain_lab:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
