@@ -1,4 +1,5 @@
 import os
+from dataclasses import Field
 
 from annotated_types import UpperCase
 from dotenv import load_dotenv
@@ -6,6 +7,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, ToolMessage, SystemMessage
 from langchain_core.tools import tool
 from IPython.display import display_markdown
+from pydantic import BaseModel, Field
+
 load_dotenv(override=True)
 
 MODEL_NAME = os.getenv("DEFAULT_MODEL_NAME")
@@ -43,6 +46,14 @@ print(f"Final result:{final_result.content}")
 # message=[SystemMessage("You are a terse assistant and provide the answer in less number of words"),
 #         HumanMessage("What is best self help book")]
 # message="Top ten self help books"
+class Company(BaseModel):
+    company_name: str = Field(description = "The Company Name")
+    ticker: str = Field(description = "The stock ticker symbol")
+    founded_year: int = Field(description = "The year company was founded")
+
+structured_output_llm=llm.with_structured_output(Company)
+company_details=structured_output_llm.invoke("Tell me about the Amazon company")
+print(company_details)
 
 
 
